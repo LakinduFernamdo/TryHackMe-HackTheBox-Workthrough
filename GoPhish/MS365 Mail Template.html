@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Microsoft 365 Email</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: #f3f3f3;
+            font-family: "Segoe UI", Arial, sans-serif;
+            color: #242424;
+        }
+
+        .email-wrapper {
+            width: 100%;
+            padding: 40px 20px;
+        }
+
+        .email-container {
+            max-width: 620px;
+            margin: 0 auto;
+            background: #ffffff;
+        }
+
+        /* Header */
+
+        .header {
+            padding: 25px 40px;
+            border-bottom: 1px solid #eeeeee;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            font-size: 20px;
+            font-weight: 600;
+            color: #737373;
+        }
+
+        .ms-logo {
+            width: 24px;
+            height: 24px;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2px;
+        }
+
+        .ms-logo span {
+            display: block;
+        }
+
+        .red {
+            background: #f25022;
+        }
+
+        .green {
+            background: #7fba00;
+        }
+
+        .blue {
+            background: #00a4ef;
+        }
+
+        .yellow {
+            background: #ffb900;
+        }
+
+        /* Main content */
+
+        .content {
+            padding: 40px;
+        }
+
+        .content h1 {
+            margin: 0 0 20px;
+            font-size: 28px;
+            font-weight: 600;
+            color: #242424;
+        }
+
+        .content p {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #555555;
+        }
+
+        .message {
+            margin: 25px 0;
+            padding: 20px;
+            background: #f5f5f5;
+            border-left: 4px solid #0078d4;
+        }
+
+        .message strong {
+            color: #242424;
+        }
+
+        /* Button */
+
+        .button-area {
+            margin: 30px 0;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 28px;
+            background: #0078d4;
+            color: #ffffff !important;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .button:hover {
+            background: #106ebe;
+        }
+
+        /* Footer */
+
+        .footer {
+            padding: 25px 40px;
+            background: #f5f5f5;
+            border-top: 1px solid #eeeeee;
+        }
+
+        .footer p {
+            margin: 5px 0;
+            font-size: 12px;
+            line-height: 1.5;
+            color: #777777;
+        }
+
+        .footer a {
+            color: #0067b8;
+            text-decoration: none;
+        }
+
+        /* Mobile */
+
+        @media (max-width: 650px) {
+
+            .email-wrapper {
+                padding: 0;
+            }
+
+            .email-container {
+                width: 100%;
+            }
+
+            .header,
+            .content,
+            .footer {
+                padding-left: 25px;
+                padding-right: 25px;
+            }
+
+            .content h1 {
+                font-size: 24px;
+            }
+
+            .button {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="email-wrapper">
+
+        <div class="email-container">
+
+            <!-- HEADER -->
+
+            <div class="header">
+
+                <div class="logo">
+
+                    <div class="ms-logo">
+                        <span class="red"></span>
+                        <span class="green"></span>
+                        <span class="blue"></span>
+                        <span class="yellow"></span>
+                    </div>
+
+                    <span>Microsoft 365</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- CONTENT -->
+
+            <div class="content">
+
+                <h1>Welcome to Microsoft 365</h1>
+
+                <p>
+                    Hello,
+                </p>
+
+                <p>
+                    Your Microsoft 365 account is ready. 
+                    You can access your Microsoft 365 services using
+                    the button below.
+                </p>
+
+
+                <div class="message">
+
+                    <strong>Microsoft 365</strong>
+
+                    <p style="margin-bottom: 0;">
+                        Access your email, documents, and other
+                        Microsoft 365 services from one place.
+                    </p>
+
+                </div>
+
+
+                <!-- URL PLACEHOLDER -->
+
+                <div class="button-area">
+
+                    <a
+                        href="{{.URL}}"
+                        class="button"
+                    >
+                        Open Microsoft 365
+                    </a>
+
+                </div>
+
+
+                <p>
+                    If you did not expect this message, you can
+                    safely ignore it.
+                </p>
+
+                <p>
+                    Thank you,<br>
+                    Microsoft 365
+                </p>
+
+            </div>
+
+
+            <!-- FOOTER -->
+
+            <div class="footer">
+
+                <p>
+                    This is a demonstration email template for UI
+                    development practice.
+                </p>
+
+                <p>
+                    © Microsoft 365
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

