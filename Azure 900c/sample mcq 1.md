@@ -1,11 +1,6 @@
 # AZ-900 Practice Question Bank
 ## Consolidated questions with correct answers
 
-**Scope note:** This file includes the 20 complete questions from the two 10-question weak-area quizzes in the available conversation history. Earlier in the conversation, two 45-question mock exams were also created, but their full question text and options are not available in the retained context here. I have not invented or reconstructed those 90 questions and presented them as the originals. Their known scores and missed-question answer keys are recorded at the end.
-
-The questions below are kept once each. Correct answers are shown for revision.
-
----
 
 # Weak-Area Quiz 1 — 10 Questions
 
@@ -265,61 +260,5 @@ The questions below are kept once each. Correct answers are shown for revision.
 
 **Explanation:** A Private DNS zone does not automatically become available to every VNet; the relevant virtual networks must be linked, unless another DNS architecture provides the resolution.
 
----
 
-# Earlier 45-question mock exams — retained results
 
-Two earlier advanced mock exams were completed before the 20 questions above. Their scores and the questions missed are available in the retained conversation context, but their complete original question wording and options are not. They are therefore not reproduced here as if they were exact originals.
-
-## First advanced mock — results
-
-- Score: **38/45 (84.44%)**
-- Cloud concepts: 9/10
-- Architecture and services: 18/20
-- Management and governance: 11/15
-
-Known missed questions and correct answers:
-
-| Question | Correct answer |
-|---|---|
-| Q7 | SaaS |
-| Q25 | Azure File Sync |
-| Q30 | Microsoft Defender for Cloud |
-| Q33 | Tags |
-| Q35 | Azure Cost Management |
-| Q37 | ARM templates |
-| Q44 | Microsoft Purview |
-
-## Second advanced mock — results
-
-- Score: **40/45 (88.89%)**
-- Cloud concepts: 11/12
-- Architecture and services: 16/18
-- Management and governance: 13/15
-
-Known missed questions and correct answers:
-
-| Question | Correct answer |
-|---|---|
-| Q4 | Hybrid cloud |
-| Q15 | Azure ExpressRoute |
-| Q24 | Private Endpoint |
-| Q34 | Azure Pricing Calculator **and** Azure Cost Management |
-| Q43 | Microsoft Purview |
-
----
-
-# Revision checklist
-
-Use this checklist when reviewing the question bank:
-
-- [ ] Public cloud vs private cloud vs hybrid cloud
-- [ ] Azure VPN Gateway vs ExpressRoute
-- [ ] Private Endpoint vs Service Endpoint
-- [ ] Private DNS zones and VNet links
-- [ ] Azure DNS Private Resolver
-- [ ] Pricing Calculator vs Cost Management vs TCO Calculator
-- [ ] Microsoft Purview: cataloging, classification, and data lineage
-- [ ] Private connectivity vs disabling public network access
-
-**Important distinction:** A Private Endpoint creates a private path to an Azure service. It does not, by itself, guarantee that the service's public network access is disabled.
